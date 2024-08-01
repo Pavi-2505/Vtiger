@@ -18,6 +18,8 @@ import org.testng.annotations.Parameters;
 import com.crm.Vtiger.ObjectRepository.HomePage;
 import com.crm.Vtiger.ObjectRepository.LoginPage;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class Baseclass {
 
 	public static WebDriver sdriver;
@@ -48,12 +50,16 @@ public class Baseclass {
 		//String BROWSER = System.getProperty("browser");
 		//String URL = System.getProperty("url");
 		if (BROWSER.equalsIgnoreCase("chrome")) {
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (BROWSER.equalsIgnoreCase("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		} else if (BROWSER.equalsIgnoreCase("edge")) {
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		} else {
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
 
