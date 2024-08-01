@@ -3,6 +3,7 @@ package com.crm.contacts;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.crm.Vtiger.ObjectRepository.CreateContactImgPage;
@@ -11,7 +12,7 @@ import com.crm.Vtiger.ObjectRepository.HomePage;
 import com.crm.Vtiger.ObjectRepository.Verifycontactpage;
 import com.crm.Vtiger.genericUtilities.Baseclass;
 
-//@Listeners(com.crm.Vtiger.genericUtilities.ListnerImplementation.class)
+@Listeners(com.crm.Vtiger.genericUtilities.ListnerImplementation.class)
 public class CreatContactTest extends Baseclass{
 	
 

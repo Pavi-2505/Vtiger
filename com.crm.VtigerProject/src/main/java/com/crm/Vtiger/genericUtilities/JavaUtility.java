@@ -20,7 +20,7 @@ public class JavaUtility {
 	 * This method is used to fetch date in YYYY-MM-DD formate
 	 * @return
 	 */
-	public String getSystemDate()
+	public static String getSystemDate()
 	{
 		Date dateObj = new Date();//14-07-2024
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

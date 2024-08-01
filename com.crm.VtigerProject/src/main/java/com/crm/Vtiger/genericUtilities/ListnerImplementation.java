@@ -1,5 +1,8 @@
 package com.crm.Vtiger.genericUtilities;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -17,7 +20,7 @@ public class ListnerImplementation implements ITestListener {
 
 	ExtentReports report;
 	ExtentTest test;
-
+	
 	@Override
 	public void onTestStart(ITestResult result) {
 		test = report.createTest(result.getName());
@@ -46,7 +49,9 @@ public class ListnerImplementation implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
-		ExtentSparkReporter spark = new ExtentSparkReporter("ExtentReport/Report.html");
+		LocalDateTime dateTime = LocalDateTime.now();
+		String dateAndTime = dateTime.toString().replace(":", "_").replace(" ", "_");
+		ExtentSparkReporter spark = new ExtentSparkReporter("ExtentReport/"+dateAndTime+"Report.html");
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setDocumentTitle("Extent Report");
 		spark.config().setReportName("Pavithra");
