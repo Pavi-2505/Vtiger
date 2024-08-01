@@ -44,11 +44,11 @@ public class Baseclass {
 //	@Parameters("BROWSER")
 	@BeforeClass(alwaysRun = true)
 	public void launchBrowser(/*String BROWSER*/) throws IOException {
-		String BROWSER = fLib.readDataFromPropertyFile("browser");
+		//String BROWSER = fLib.readDataFromPropertyFile("browser");
 		
-		String URL = fLib.readDataFromPropertyFile("url");
-		//String BROWSER = System.getProperty("browser");
-		//String URL = System.getProperty("url");
+		//String URL = fLib.readDataFromPropertyFile("url");
+		String BROWSER = System.getProperty("browser");
+		String URL = System.getProperty("url");
 		if (BROWSER.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
