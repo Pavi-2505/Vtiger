@@ -45,5 +45,6 @@ public class CreatContactTest extends Baseclass{
 	public void m2test()
 	{
 		System.out.println("hello");
+		System.out.println("hi");
 	}
 }
